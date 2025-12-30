@@ -1,0 +1,42 @@
+<div class="feature-flags-container container">
+    <h3>{{ 'SETTINGS.FEATURE_FLAGS.TITLE' | translate }}</h3>
+    <div class="row justify-content-around mt-5">
+        <div class="categories col-5">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="themeFlag" [checked]="flagsService.flags().enableTheme"
+                    (change)="flagsService.toggle('enableTheme')" />
+                <label class="form-check-label" for="themeFlag">
+                    {{ 'SETTINGS.FEATURE_FLAGS.THEME' | translate }}
+                </label>
+            </div>
+        </div>
+        <div class="categories col-5">
+            <div class="form-check form-switch mt-3">
+                <input class="form-check-input" type="checkbox" id="languageFlag"
+                    [checked]="flagsService.flags().enableLanguage" (change)="flagsService.toggle('enableLanguage')" />
+                <label class="form-check-label" for="languageFlag">
+                    {{ 'SETTINGS.FEATURE_FLAGS.LANGUAGE' | translate }}
+                </label>
+            </div>
+        </div>
+        <div class="categories mt-5 col-5">
+            <div class="form-check form-switch mt-3">
+                <input class="form-check-input" type="checkbox" id="profilePicFlag"
+                    [checked]="flagsService.flags().enableProfilePic" (change)="flagsService.toggle('enableProfilePic')" />
+                <label class="form-check-label" for="profilePicFlag">
+                    {{ 'SETTINGS.FEATURE_FLAGS.PROFILE_PIC' | translate }}
+                </label>
+            </div>
+        </div>
+        <div class="categories mt-5 col-5">
+            <div class="form-check form-switch mt-3">
+                <input class="form-check-input" type="checkbox" id="changePasswordFlag"
+                    [checked]="flagsService.flags().enableChangePassword"
+                    (change)="flagsService.toggle('enableChangePassword')" />
+                <label class="form-check-label" for="changePasswordFlag">
+                    {{ 'SETTINGS.FEATURE_FLAGS.CHANGE_PASSWORD' | translate }}
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

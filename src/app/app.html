@@ -1,0 +1,18 @@
+<div class="ms-3 mt-2">
+  <h3>{{'SETTINGS.ROOT.TITLE' | translate}}</h3>
+  <p>{{'SETTINGS.ROOT.DESCRIPTION' | translate}}</p>
+</div>
+<hr>
+<div class="d-flex">
+    <div class="col-2 categories text-center ms-3 d-flex align-items-center justify-content-center" [ngClass]="{'selected' : selectedCategory === settingsConstants.PROFILE}" (click)="togglePage(settingsConstants.PROFILE)">
+      <span>{{'SETTINGS.ROOT.MY_PROFILE' | translate}}</span>
+    </div>
+    <div class="col-2 categories text-center ms-4 d-flex align-items-center justify-content-center" [ngClass]="{'selected' : selectedCategory === settingsConstants.GENERAL}" (click)="togglePage(settingsConstants.GENERAL)">
+      <span>{{'SETTINGS.ROOT.GENERAL_SETTINGS' | translate}}</span>
+    </div>
+    <div class="col-2 categories text-center ms-4 d-flex align-items-center justify-content-center" [ngClass]="{'selected' : selectedCategory === settingsConstants.FEATURE}" (click)="togglePage(settingsConstants.FEATURE)">
+      <span>{{'SETTINGS.ROOT.TOGGLE_FEATURE' | translate}}</span>
+    </div>
+</div>
+<hr>
+<router-outlet></router-outlet>

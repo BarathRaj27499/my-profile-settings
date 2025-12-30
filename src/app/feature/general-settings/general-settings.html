@@ -1,0 +1,47 @@
+<div class="container general-settings-container">
+    <div class="row justify-content-around">
+        @if(flagsService.isEnabled('enableLanguage')){
+        <div class="language-container col-4">
+            <div class="d-flex align-items-center ms-3">
+                <i class="fa-solid fa-language fa-2x me-2"></i>
+                <h2>{{'SETTINGS.GENERAL.LANGUAGE_TITLE' | translate}}</h2>
+            </div>
+            <div class="d-flex mt-5">
+                <div class="col-2 categories text-center ms-3" [class.selected]="currentLanguage === 'en'"
+                    (click)="changeLanguage('en')">
+                    {{'SETTINGS.GENERAL.LANGUAGE_ENGLISH' | translate}}
+                </div>
+                <div class="col-2 categories text-center ms-4" [class.selected]="currentLanguage === 'hi'"
+                    (click)="changeLanguage('hi')">
+                    {{'SETTINGS.GENERAL.LANGUAGE_HINDI' | translate}}
+                </div>
+                <div class="col-2 categories text-center ms-4" [class.selected]="currentLanguage === 'ta'"
+                    (click)="changeLanguage('ta')">
+                    {{'SETTINGS.GENERAL.LANGUAGE_TAMIL' | translate}}
+                </div>
+            </div>
+        </div>
+        }
+        @if(flagsService.isEnabled('enableTheme')){
+        <div class="language-container col-4">
+            <div class="d-flex align-items-center ms-3">
+                <h2>{{'SETTINGS.GENERAL.THEME_TITLE' | translate}}</h2>
+            </div>
+
+            <div class="d-flex mt-5">
+                <div class="col-2 categories text-center ms-3" [class.selected]="isActive('light')"
+                    (click)="setTheme('light')">
+                    <i class="fa-regular fa-sun"></i>
+                    {{'SETTINGS.GENERAL.THEME_LIGHT' | translate}}
+                </div>
+
+                <div class="col-2 categories text-center ms-4" [class.selected]="isActive('dark')"
+                    (click)="setTheme('dark')">
+                    <i class="fa-solid fa-moon"></i>
+                    {{'SETTINGS.GENERAL.THEME_DARK' | translate}}
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

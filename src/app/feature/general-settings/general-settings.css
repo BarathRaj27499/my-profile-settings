@@ -1,0 +1,31 @@
+.categories {
+  background-color: var(--bg-soft);
+  border-radius: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100px;
+  transition: all 0.2s ease-in-out;
+}
+
+.categories:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-hover);
+  cursor: pointer;
+}
+
+.categories.selected {
+  background-color: var(--bg-hover);
+  color: var(--text-hover);
+  cursor: pointer;
+}
+
+.language-container {
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.general-settings-container {
+  margin-top: 20vh;
+}

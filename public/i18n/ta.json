@@ -1,0 +1,44 @@
+{
+  "SETTINGS": {
+    "ROOT": {
+      "TITLE": "அமைப்புகள்",
+      "DESCRIPTION": "உங்கள் சுயவிவர அமைப்புகள் மற்றும் விருப்பங்களை நிர்வகிக்கவும்",
+      "MY_PROFILE": "என் சுயவிவரம்",
+      "GENERAL_SETTINGS": "பொது அமைப்புகள்",
+      "TOGGLE_FEATURE": "அம்சத்தை மாற்று"
+    },
+    "PROFILE": {
+      "FORM": {
+        "UPDATE_PHOTO": "புதுப்பிக்கவும்",
+        "REMOVE_PHOTO": "நீக்கு",
+        "FIRST_NAME": "முதல் பெயர்",
+        "LAST_NAME": "கடைசி பெயர்",
+        "EMAIL": "மின்னஞ்சல்",
+        "PERMANENT_ADDRESS": "நிரந்தர முகவரி",
+        "TEMPORARY_ADDRESS": "தற்காலிக முகவரி"
+      },
+      "PHOTO_MODAL": {
+        "TITLE": "புகைப்படத்தை புதுப்பிக்கவும்"
+      },
+      "CAMERA_MODAL": {
+        "CLOSE": "மூடு"
+      }
+    },
+    "GENERAL": {
+      "LANGUAGE_TITLE": "மொழி",
+      "LANGUAGE_ENGLISH": "ஆங்கிலம்",
+      "LANGUAGE_HINDI": "இந்தி",
+      "LANGUAGE_TAMIL": "தமிழ்",
+      "THEME_TITLE": "தீம்",
+      "THEME_LIGHT": "லைட்",
+      "THEME_DARK": "டார்க்"
+    },
+    "FEATURE_FLAGS": {
+      "TITLE": "அம்ச மாற்றிகள்",
+      "THEME": "தீம் தேர்வு",
+      "LANGUAGE": "மொழி தேர்வு",
+      "PROFILE_PIC": "சுயவிவர படம்",
+      "CHANGE_PASSWORD": "கடவுச்சொல்லை மாற்று"
+    }
+  }
+}

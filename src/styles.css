@@ -1,0 +1,32 @@
+/* styles.css */
+
+body.light {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --card-bg: #f8f9fa;
+  --bg-soft: rgb(230, 230, 230);
+  --bg-hover: #000000;
+  --text-hover: #ffffff;
+  --border-color: #000000;
+  --category-bg: rgb(230, 230, 230);
+  --category-hover-bg: #000000;
+  --category-text-hover: #ffffff;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --card-bg: #1e1e1e;
+  --bg-soft: #2a2a2a;
+  --bg-hover: #ffffff;
+  --text-hover: #000000;
+  --border-color: #ffffff;
+  --category-bg: #2a2a2a;
+  --category-hover-bg: #ffffff;
+  --category-text-hover: #000000;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
