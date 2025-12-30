@@ -1,0 +1,44 @@
+{
+  "SETTINGS": {
+    "ROOT": {
+      "TITLE": "सेटिंग्स",
+      "DESCRIPTION": "अपनी प्रोफ़ाइल सेटिंग्स और प्राथमिकताएँ प्रबंधित करें",
+      "MY_PROFILE": "मेरी प्रोफ़ाइल",
+      "GENERAL_SETTINGS": "सामान्य सेटिंग्स",
+      "TOGGLE_FEATURE": "फ़ीचर टॉगल करें"
+    },
+    "PROFILE": {
+      "FORM": {
+        "UPDATE_PHOTO": "अपडेट करें",
+        "REMOVE_PHOTO": "हटाएं",
+        "FIRST_NAME": "पहला नाम",
+        "LAST_NAME": "अंतिम नाम",
+        "EMAIL": "ईमेल",
+        "PERMANENT_ADDRESS": "स्थायी पता",
+        "TEMPORARY_ADDRESS": "अस्थायी पता"
+      },
+      "PHOTO_MODAL": {
+        "TITLE": "फ़ोटो अपडेट करें"
+      },
+      "CAMERA_MODAL": {
+        "CLOSE": "बंद करें"
+      }
+    },
+    "GENERAL": {
+      "LANGUAGE_TITLE": "भाषा",
+      "LANGUAGE_ENGLISH": "अंग्रेज़ी",
+      "LANGUAGE_HINDI": "हिंदी",
+      "LANGUAGE_TAMIL": "तमिल",
+      "THEME_TITLE": "थीम",
+      "THEME_LIGHT": "लाइट",
+      "THEME_DARK": "डार्क"
+    },
+    "FEATURE_FLAGS": {
+      "TITLE": "फ़ीचर टॉगल",
+      "THEME": "थीम चयन",
+      "LANGUAGE": "भाषा चयन",
+      "PROFILE_PIC": "प्रोफ़ाइल चित्र",
+      "CHANGE_PASSWORD": "पासवर्ड बदलें"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "SETTINGS": {
+    "ROOT": {
+      "TITLE": "Settings",
+      "DESCRIPTION": "Manage your profile settings and preferences",
+      "MY_PROFILE": "My Profile",
+      "GENERAL_SETTINGS": "General Settings",
+      "TOGGLE_FEATURE": "Toggle Feature"
+    },
+    "PROFILE": {
+      "FORM": {
+        "UPDATE_PHOTO": "Update",
+        "REMOVE_PHOTO": "Remove",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "EMAIL": "Email",
+        "PERMANENT_ADDRESS": "Permanent Address",
+        "TEMPORARY_ADDRESS": "Temporary Address"
+      },
+      "PHOTO_MODAL": {
+        "TITLE": "Update Photo"
+      },
+      "CAMERA_MODAL": {
+        "CLOSE": "Close"
+      }
+    },
+    "GENERAL": {
+      "LANGUAGE_TITLE": "Language",
+      "LANGUAGE_ENGLISH": "English",
+      "LANGUAGE_HINDI": "Hindi",
+      "LANGUAGE_TAMIL": "Tamil",
+      "THEME_TITLE": "Theme",
+      "THEME_LIGHT": "Light",
+      "THEME_DARK": "Dark"
+    },
+    "FEATURE_FLAGS": {
+      "TITLE": "Feature Toggles",
+      "THEME": "Theme Selector",
+      "LANGUAGE": "Language Selector",
+      "PROFILE_PIC": "Profile Picture",
+      "CHANGE_PASSWORD": "Change Password"
+    }
+  }
+}
