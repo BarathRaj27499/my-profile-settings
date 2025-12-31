@@ -36,7 +36,7 @@ export class App {
   //to create a dummy user to demonstrate fake login authentication in frontend without backend
   createUser() {
     this.authService.saveUser({
-      email: 'test@example.com',
+      email: 'rakehs.singh@example.com',
       password: 'Password@123',
     });
   }
