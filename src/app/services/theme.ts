@@ -8,7 +8,7 @@ export class Theme {
   private theme$ = signal<ThemeType>(
     (localStorage.getItem('theme') as ThemeType) || 'light'
   );
-  readonly theme = this.theme$();
+  readonly theme = this.theme$.asReadonly();
 
   constructor() {
     this.applyTheme(this.theme$());
