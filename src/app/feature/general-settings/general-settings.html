@@ -1,3 +1,11 @@
+@if(flagsService.flags().enableChangePassword){
+<div id="change-pwd-container" class="row justify-content-center mt-5">
+    <div id="changePassword" class="col-2 categories text-center ms-4"
+        (click)="openModal()">
+        Change Password
+    </div>
+</div>
+}
 <div class="container general-settings-container">
     <div class="row justify-content-around">
         @if(flagsService.isEnabled('enableLanguage')){

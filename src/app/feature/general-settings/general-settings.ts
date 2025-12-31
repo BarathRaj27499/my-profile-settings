@@ -5,6 +5,8 @@ import { Language } from '../../services/language';
 import { LanguageType } from '../../types/language-type';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FeatureFlag } from '../../services/feature-flag';
+import { ChangePassword } from '../../auth/change-password/change-password';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-general-settings',
@@ -13,14 +15,18 @@ import { FeatureFlag } from '../../services/feature-flag';
   styleUrl: './general-settings.css',
 })
 export class GeneralSettings {
-  
   currentTheme: any;
 
-  constructor(private themeService: Theme, private languageService: Language, public flagsService: FeatureFlag){
+  constructor(
+    private themeService: Theme,
+    private languageService: Language,
+    public flagsService: FeatureFlag,
+    private modalService: NgbModal
+  ) {
     this.currentTheme = this.themeService.theme;
   }
 
-  get currentLanguage(){
+  get currentLanguage() {
     return this.languageService.currentLanguage();
   }
 
@@ -36,7 +42,15 @@ export class GeneralSettings {
     return this.currentTheme() === theme;
   }
 
-  changeLanguage(selectedLanguage: LanguageType){
+  changeLanguage(selectedLanguage: LanguageType) {
     this.languageService.changeLanguage(selectedLanguage);
+  }
+
+  openModal() {
+    this.modalService.open(ChangePassword, {
+      centered: true,
+      backdrop: 'static',
+      size: 'md',
+    });
   }
 }
