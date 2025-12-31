@@ -36,7 +36,6 @@ export class MyProfile {
 
   private syncFormWithProfile(): void {
     effect(() => {
-      debugger
       const profile = this.profileService.profile();
       this.form.patchValue(profile, { emitEvent: false });
       this.imagePreview.set(profile.avatar);
@@ -44,7 +43,6 @@ export class MyProfile {
   }
 
   async onBlur(field: keyof ProfileDetails): Promise<void> {
-    debugger;
     const control = this.form.get(field);
     if (!control) return;
 

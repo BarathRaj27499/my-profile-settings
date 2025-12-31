@@ -5,20 +5,23 @@ import { ThemeType } from '../types/theme-type';
   providedIn: 'root',
 })
 export class Theme {
-  private readonly _theme = signal<ThemeType>(
+  private theme$ = signal<ThemeType>(
     (localStorage.getItem('theme') as ThemeType) || 'light'
   );
-
-  readonly theme = this._theme.asReadonly();
+  readonly theme = this.theme$();
 
   constructor() {
-    // Apply theme on app load / refresh
-    document.body.className = this._theme();
+    this.applyTheme(this.theme$());
   }
 
-  setTheme(theme: ThemeType): void {
-    this._theme.set(theme);
-    document.body.className = theme;
+  setTheme(theme: ThemeType) {
+    this.theme$.set(theme);
+    this.applyTheme(theme);
     localStorage.setItem('theme', theme);
+  }
+
+  private applyTheme(theme: ThemeType) {
+    document.body.classList.remove('light', 'dark');
+    document.body.classList.add(theme);
   }
 }

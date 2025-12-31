@@ -3,6 +3,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { SettingsConstants } from './constants/settings.constants';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Theme } from './services/theme';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,9 @@ export class App {
   protected readonly title = signal('my-profile-settings');
   settingsConstants: any = SettingsConstants;
   selectedCategory: string = localStorage.getItem('settings-category') === this.settingsConstants.PROFILE ? this.settingsConstants.PROFILE : (localStorage.getItem('settings-category') === this.settingsConstants.GENERAL ? this.settingsConstants.GENERAL : this.settingsConstants.FEATURE);
-  constructor(private router: Router) {}
+  constructor(private router: Router, private themeService: Theme) {}
 
   togglePage(category: string) {
-    debugger
     switch (category) {
       case this.settingsConstants.PROFILE:
         this.selectedCategory = category;

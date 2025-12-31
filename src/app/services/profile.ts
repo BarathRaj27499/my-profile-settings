@@ -32,7 +32,6 @@ export class Profile {
   }
 
   async updateProfilePic(base64: string): Promise<void> {
-    debugger
     await this.updateProfile({ avatar: base64 });
   }
 
