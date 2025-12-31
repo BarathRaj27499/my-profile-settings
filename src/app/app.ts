@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { SettingsConstants } from './constants/settings.constants';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Theme } from './services/theme';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,24 @@ import { Theme } from './services/theme';
 export class App {
   protected readonly title = signal('my-profile-settings');
   settingsConstants: any = SettingsConstants;
-  selectedCategory: string = localStorage.getItem('settings-category') === this.settingsConstants.PROFILE ? this.settingsConstants.PROFILE : (localStorage.getItem('settings-category') === this.settingsConstants.GENERAL ? this.settingsConstants.GENERAL : this.settingsConstants.FEATURE);
-  constructor(private router: Router, private themeService: Theme) {}
+  selectedCategory: string = this.settingsConstants.PROFILE;
+  private routeCategoryMap: Record<string, string> = {
+    'my-profile': this.settingsConstants.PROFILE,
+    'general-settings': this.settingsConstants.GENERAL,
+    'toggle-feature': this.settingsConstants.FEATURE,
+  };
+
+  constructor(private router: Router, private themeService: Theme) {
+    this.setCategoryFromUrl();
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => this.setCategoryFromUrl());
+  }
+
+  private setCategoryFromUrl() {
+    const currentUrl = this.router.url.replace('/', '');
+    this.selectedCategory = this.routeCategoryMap[currentUrl] ?? this.settingsConstants.PROFILE;
+  }
 
   togglePage(category: string) {
     switch (category) {
