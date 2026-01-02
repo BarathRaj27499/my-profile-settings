@@ -18,11 +18,21 @@
       <div class="col-md-6">
         <label class="form-label">{{'SETTINGS.PROFILE.FORM.FIRST_NAME' | translate}}</label>
         <input type="text" class="form-control" formControlName="firstName" (blur)="onBlur('firstName')" />
+        @if (form.get('firstName')?.hasError('required') && form.get('firstName')?.touched) {
+          <div class="text-danger text-center mt-2">
+              First name is required
+          </div>
+          }
       </div>
   
       <div class="col-md-6">
         <label class="form-label">{{'SETTINGS.PROFILE.FORM.LAST_NAME' | translate}}</label>
         <input type="text" class="form-control" formControlName="lastName" (blur)="onBlur('lastName')" />
+        @if (form.get('lastName')?.hasError('required') && form.get('lastName')?.touched) {
+          <div class="text-danger text-center mt-2">
+              Last name is required
+          </div>
+          }
       </div>
   
       <div class="col-md-12">
@@ -34,12 +44,22 @@
         <label class="form-label">{{'SETTINGS.PROFILE.FORM.PERMANENT_ADDRESS' | translate}}</label>
         <textarea class="form-control" rows="2" formControlName="permanentAddress"
           (blur)="onBlur('permanentAddress')"></textarea>
+          @if (form.get('permanentAddress')?.hasError('required') && form.get('permanentAddress')?.touched) {
+            <div class="text-danger text-center mt-2">
+                Permanant address is required
+            </div>
+            }
       </div>
   
       <div class="col-md-12">
         <label class="form-label">{{'SETTINGS.PROFILE.FORM.TEMPORARY_ADDRESS' | translate}}</label>
         <textarea class="form-control" rows="2" formControlName="temporaryAddress"
           (blur)="onBlur('temporaryAddress')"></textarea>
+          @if (form.get('temporaryAddress')?.hasError('required') && form.get('temporaryAddress')?.touched) {
+            <div class="text-danger text-center mt-2">
+                Temporary address is required
+            </div>
+            }
       </div>
   
     </div>

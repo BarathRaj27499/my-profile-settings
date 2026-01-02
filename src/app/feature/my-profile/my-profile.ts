@@ -1,5 +1,5 @@
 import { Component, effect, signal } from '@angular/core';
-import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Profile } from '../../services/profile';
 import { ProfileDetails } from '../../models/profile-details';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -26,11 +26,11 @@ export class MyProfile {
 
   private initForm(): void {
     this.form = this.fb.group({
-      firstName: [''],
-      lastName: [''],
+      firstName: ['',[Validators.required]],
+      lastName: ['',[Validators.required]],
       email: [{ value: '', disabled: true }],
-      permanentAddress: [''],
-      temporaryAddress: [''],
+      permanentAddress: ['',[Validators.required]],
+      temporaryAddress: ['',[Validators.required]],
       avatar: ['']
     });
   }
@@ -50,7 +50,7 @@ export class MyProfile {
     const currentValue = control.value;
     const originalValue = this.profileService.profile()[field];
 
-    if (currentValue !== originalValue) {
+    if (currentValue !== originalValue && currentValue?.toString().trim()) {
       await this.profileService.updateProfile({
         [field]: currentValue,
       });
