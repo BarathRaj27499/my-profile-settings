@@ -5,7 +5,8 @@
       "DESCRIPTION": "Manage your profile settings and preferences",
       "MY_PROFILE": "My Profile",
       "GENERAL_SETTINGS": "General Settings",
-      "TOGGLE_FEATURE": "Toggle Feature"
+      "TOGGLE_FEATURE": "Toggle Feature",
+      "LOG_OUT": "Logout"
     },
     "PROFILE": {
       "FORM": {
@@ -31,7 +32,8 @@
       "LANGUAGE_TAMIL": "Tamil",
       "THEME_TITLE": "Theme",
       "THEME_LIGHT": "Light",
-      "THEME_DARK": "Dark"
+      "THEME_DARK": "Dark",
+      "CHANGE_PASSWORD": "Change Password"
     },
     "FEATURE_FLAGS": {
       "TITLE": "Feature Toggles",
@@ -39,6 +41,25 @@
       "LANGUAGE": "Language Selector",
       "PROFILE_PIC": "Profile Picture",
       "CHANGE_PASSWORD": "Change Password"
+    },
+    "AUTH": {
+      "LOGIN": {
+        "TITLE": "Login",
+        "EMAIL_PLACEHOLDER": "Email",
+        "PASSWORD_PLACEHOLDER": "Password",
+        "INVALID_CREDENTIALS": "Invalid credentials",
+        "LOGIN_BUTTON": "Login"
+      },
+      "CHANGE_PASSWORD": {
+        "TITLE": "Change Password",
+        "CURRENT_PASSWORD": "Current Password",
+        "NEW_PASSWORD": "New Password",
+        "CONFIRM_PASSWORD": "Confirm Password",
+        "ERROR_INCORRECT_CURRENT": "Current password is incorrect",
+        "ERROR_NEW_PASSWORD_EMPTY": "New password cannot be empty",
+        "ERROR_PASSWORD_MISMATCH": "Passwords do not match",
+        "UPDATE_BUTTON": "Update Password"
+      }
     }
   }
 }
