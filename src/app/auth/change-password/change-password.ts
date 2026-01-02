@@ -4,6 +4,7 @@ import { Auth } from '../../services/auth';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Theme } from '../../services/theme';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ToastService } from '../../services/toast-service';
 
 @Component({
   selector: 'app-change-password',
@@ -14,7 +15,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class ChangePassword {
   form!: FormGroup;
   isDarkMode!:Signal<string>;
-  constructor(private fb: FormBuilder, private auth: Auth, private modalService: NgbModal, private theme:Theme) {
+  constructor(private fb: FormBuilder, private toastService: ToastService, private auth: Auth, private modalService: NgbModal, private theme:Theme) {
     this.form = this.fb.group({
       currentPassword: [''],
       newPassword: ['',[Validators.required]],
@@ -38,7 +39,7 @@ export class ChangePassword {
     }
     this.auth.saveUser({ ...user, password: newPassword! });
     this.closeModal();
-    alert('Password changed successfully');
+    this.toastService.show('Password changed successfully!');
   }
 
   closeModal() {

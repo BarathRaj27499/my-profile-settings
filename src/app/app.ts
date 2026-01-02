@@ -6,10 +6,11 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { Theme } from './services/theme';
 import { filter } from 'rxjs';
 import { Auth } from './services/auth';
+import { Toast } from './shared/toast/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, TranslatePipe],
+  imports: [RouterOutlet, CommonModule, TranslatePipe, Toast],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

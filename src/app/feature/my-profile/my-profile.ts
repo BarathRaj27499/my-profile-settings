@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProfilePicUpdate } from '../../shared/profile-pic-update/profile-pic-update';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FeatureFlag } from '../../services/feature-flag';
+import { ToastService } from '../../services/toast-service';
 
 @Component({
   selector: 'app-my-profile',
@@ -18,7 +19,7 @@ export class MyProfile {
   form!: FormGroup;
   fullName!:string;
 
-  constructor(private fb: FormBuilder, private profileService: Profile, public modalService: NgbModal, public flagsService: FeatureFlag) {
+  constructor(private fb: FormBuilder, private toastService: ToastService, private profileService: Profile, public modalService: NgbModal, public flagsService: FeatureFlag) {
     this.initForm();
     this.syncFormWithProfile();
   }
@@ -53,8 +54,7 @@ export class MyProfile {
       await this.profileService.updateProfile({
         [field]: currentValue,
       });
-
-      alert('Successfully changed');
+      this.toastService.show('Successfully changed!');
     }
   }
 
