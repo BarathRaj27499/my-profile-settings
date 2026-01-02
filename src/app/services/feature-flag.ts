@@ -11,7 +11,7 @@ export class FeatureFlag {
     enableTheme: true,
     enableLanguage: true,
     enableProfilePic: true,
-    enableChangePassword: false,
+    enableChangePassword: true,
   };
 
   private _flags = signal<FeatureFlags>(this.loadFlags());
