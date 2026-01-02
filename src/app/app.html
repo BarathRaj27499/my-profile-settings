@@ -1,9 +1,12 @@
 @if(isLoggedIn()){
-<div class="ms-3 mt-2">
-  <h3>{{'SETTINGS.ROOT.TITLE' | translate}}</h3>
-  <p>{{'SETTINGS.ROOT.DESCRIPTION' | translate}}</p>
+<div class="ms-3 mt-2 d-flex justify-content-between align-items-center">
+  <div>
+    <h3>{{'SETTINGS.ROOT.TITLE' | translate}}</h3>
+    <p>{{'SETTINGS.ROOT.DESCRIPTION' | translate}}</p>
+  </div>
+  <button class="btn btn-dark me-5" [class.btn-dark]="isDarkMode() !== 'dark'" [class.btn-light]="isDarkMode() === 'dark'" (click)="logOut()">Logout</button>
 </div>
-<hr>
+<hr class="mt-0">
 <div class="d-flex">
   <div class="col-2 categories text-center ms-3 d-flex align-items-center justify-content-center"
     [ngClass]="{'selected' : selectedCategory === settingsConstants.PROFILE}"

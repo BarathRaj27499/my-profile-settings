@@ -3,11 +3,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Auth } from '../../services/auth';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Theme } from '../../services/theme';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-change-password',
-  imports: [ReactiveFormsModule, NgClass],
+  imports: [ReactiveFormsModule],
   templateUrl: './change-password.html',
   styleUrl: './change-password.css',
 })

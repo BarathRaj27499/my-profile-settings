@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Auth } from '../../services/auth';
+import { Theme } from '../../services/theme';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,14 @@ import { Auth } from '../../services/auth';
 })
 export class Login {
   form!: FormGroup;
+  isDarkMode!:Signal<string>;
 
-  constructor(private fb: FormBuilder, private auth: Auth, private router: Router) {
+  constructor(private fb: FormBuilder, private auth: Auth, private router: Router, private theme: Theme) {
     this.form = this.fb.group({
       email: [''],
       password: [''],
     });
+    this.isDarkMode =  this.theme.theme;
   }
 
   login() {

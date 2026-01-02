@@ -5,29 +5,35 @@ import { AuthUser } from '../models/user';
   providedIn: 'root',
 })
 export class Auth {
-  private userKey = 'auth-user';
-  private loggedIn$ = signal<boolean>(false);
+  private readonly userKey = 'auth-user';
+  private readonly loggedInKey = 'is-logged-in';
 
+  private loggedIn$ = signal<boolean>(false);
   readonly isLoggedIn = this.loggedIn$.asReadonly();
 
   constructor() {
-    const user = localStorage.getItem(this.userKey);
-    this.loggedIn$.set(!!user);
+    this.restoreLoginState();
+  }
+
+  private restoreLoginState(): void {
+    const loggedIn = localStorage.getItem(this.loggedInKey);
+    this.loggedIn$.set(loggedIn === 'true');
   }
 
   login(email: string, password: string): boolean {
-    const stored = this.getStoredUser();
+    const storedUser = this.getStoredUser();
 
-    if (stored && stored.email === email && stored.password === password) {
-      localStorage.setItem(this.userKey, JSON.stringify(stored));
+    if (storedUser && storedUser.email === email && storedUser.password === password) {
+      localStorage.setItem(this.loggedInKey, 'true');
       this.loggedIn$.set(true);
       return true;
     }
+
     return false;
   }
 
-  logout() {
-    localStorage.removeItem(this.userKey);
+  logout(): void {
+    localStorage.removeItem(this.loggedInKey);
     this.loggedIn$.set(false);
   }
 
@@ -35,7 +41,7 @@ export class Auth {
     return JSON.parse(localStorage.getItem(this.userKey) || 'null');
   }
 
-  saveUser(user: AuthUser) {
+  saveUser(user: AuthUser): void {
     localStorage.setItem(this.userKey, JSON.stringify(user));
   }
 }

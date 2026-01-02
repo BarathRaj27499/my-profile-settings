@@ -23,6 +23,7 @@ export class App {
     'toggle-feature': this.settingsConstants.FEATURE,
   };
   isLoggedIn!: Signal<boolean>;
+  isDarkMode!:Signal<string>;
 
   constructor(private router: Router, private themeService: Theme, private authService: Auth) {
     this.createUser();
@@ -31,12 +32,13 @@ export class App {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => this.setCategoryFromUrl());
     this.isLoggedIn = this.authService.isLoggedIn;
+    this.isDarkMode =  this.themeService.theme;
   }
 
   //to create a dummy user to demonstrate fake login authentication in frontend without backend
   createUser() {
     this.authService.saveUser({
-      email: 'rakehs.singh@example.com',
+      email: 'rakesh.singh@example.com',
       password: 'Password@123',
     });
   }
@@ -64,5 +66,10 @@ export class App {
         this.router.navigate(['toggle-feature']);
         break;
     }
+  }
+
+  logOut(){
+    this.authService.logout();
+    this.router.navigate(['login']);
   }
 }

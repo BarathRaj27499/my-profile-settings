@@ -7,7 +7,7 @@
           <input class="form-control mb-3" placeholder="Email" formControlName="email" />
           <input class="form-control mb-3" type="password" placeholder="Password" formControlName="password" />
           <div class="d-flex justify-content-center">
-              <button class="btn btn-dark" (click)="login()">Login</button>
+              <button class="btn" [class.btn-dark]="isDarkMode() !== 'dark'" [class.btn-light]="isDarkMode() === 'dark'" (click)="login()">Login</button>
           </div>
         </form>
     </div>
