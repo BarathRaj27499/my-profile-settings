@@ -5,7 +5,8 @@
       "DESCRIPTION": "உங்கள் சுயவிவர அமைப்புகள் மற்றும் விருப்பங்களை நிர்வகிக்கவும்",
       "MY_PROFILE": "என் சுயவிவரம்",
       "GENERAL_SETTINGS": "பொது அமைப்புகள்",
-      "TOGGLE_FEATURE": "அம்சத்தை மாற்று"
+      "TOGGLE_FEATURE": "அம்சத்தை மாற்று",
+      "LOG_OUT": "வெளியேறு"
     },
     "PROFILE": {
       "FORM": {
@@ -31,7 +32,8 @@
       "LANGUAGE_TAMIL": "தமிழ்",
       "THEME_TITLE": "தீம்",
       "THEME_LIGHT": "லைட்",
-      "THEME_DARK": "டார்க்"
+      "THEME_DARK": "டார்க்",
+      "CHANGE_PASSWORD": "கடவுச்சொல்லை மாற்றவும்"
     },
     "FEATURE_FLAGS": {
       "TITLE": "அம்ச மாற்றிகள்",
@@ -39,6 +41,25 @@
       "LANGUAGE": "மொழி தேர்வு",
       "PROFILE_PIC": "சுயவிவர படம்",
       "CHANGE_PASSWORD": "கடவுச்சொல்லை மாற்று"
+    },
+    "AUTH": {
+      "LOGIN": {
+        "TITLE": "உள்நுழைவு",
+        "EMAIL_PLACEHOLDER": "மின்னஞ்சல்",
+        "PASSWORD_PLACEHOLDER": "கடவுச்சொல்",
+        "INVALID_CREDENTIALS": "தவறான உள்நுழைவு விவரங்கள்",
+        "LOGIN_BUTTON": "உள்நுழைய"
+      },
+      "CHANGE_PASSWORD": {
+        "TITLE": "கடவுச்சொல்லை மாற்றவும்",
+        "CURRENT_PASSWORD": "தற்போதைய கடவுச்சொல்",
+        "NEW_PASSWORD": "புதிய கடவுச்சொல்",
+        "CONFIRM_PASSWORD": "கடவுச்சொல்லை உறுதிப்படுத்தவும்",
+        "ERROR_INCORRECT_CURRENT": "தற்போதைய கடவுச்சொல் தவறானது",
+        "ERROR_NEW_PASSWORD_EMPTY": "புதிய கடவுச்சொல் காலியாக இருக்க முடியாது",
+        "ERROR_PASSWORD_MISMATCH": "கடவுச்சொற்கள் பொருந்தவில்லை",
+        "UPDATE_BUTTON": "கடவுச்சொல்லை புதுப்பிக்கவும்"
+      }
     }
   }
 }

@@ -1,12 +1,13 @@
 import { Component, Signal } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Auth } from '../../services/auth';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Theme } from '../../services/theme';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-password',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, TranslatePipe],
   templateUrl: './change-password.html',
   styleUrl: './change-password.css',
 })
@@ -16,7 +17,7 @@ export class ChangePassword {
   constructor(private fb: FormBuilder, private auth: Auth, private modalService: NgbModal, private theme:Theme) {
     this.form = this.fb.group({
       currentPassword: [''],
-      newPassword: [''],
+      newPassword: ['',[Validators.required]],
       confirmPassword: [''],
     });
     this.isDarkMode =  this.theme.theme;
@@ -27,15 +28,14 @@ export class ChangePassword {
     const user = this.auth.getStoredUser();
 
     if (!user || user.password !== currentPassword) {
-      alert('Current password is incorrect');
+      this.form.setErrors({ passwordIncorrrect: true });
       return;
     }
 
     if (newPassword !== confirmPassword) {
-      alert('Passwords do not match');
+      this.form.setErrors({ passwordMismatch: true });
       return;
     }
-
     this.auth.saveUser({ ...user, password: newPassword! });
     this.closeModal();
     alert('Password changed successfully');

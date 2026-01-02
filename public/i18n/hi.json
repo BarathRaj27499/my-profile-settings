@@ -5,7 +5,8 @@
       "DESCRIPTION": "अपनी प्रोफ़ाइल सेटिंग्स और प्राथमिकताएँ प्रबंधित करें",
       "MY_PROFILE": "मेरी प्रोफ़ाइल",
       "GENERAL_SETTINGS": "सामान्य सेटिंग्स",
-      "TOGGLE_FEATURE": "फ़ीचर टॉगल करें"
+      "TOGGLE_FEATURE": "फ़ीचर टॉगल करें",
+      "LOG_OUR": "लॉग आउट"
     },
     "PROFILE": {
       "FORM": {
@@ -31,7 +32,8 @@
       "LANGUAGE_TAMIL": "तमिल",
       "THEME_TITLE": "थीम",
       "THEME_LIGHT": "लाइट",
-      "THEME_DARK": "डार्क"
+      "THEME_DARK": "डार्क",
+      "CHANGE_PASSWORD": "पासवर्ड बदलें"
     },
     "FEATURE_FLAGS": {
       "TITLE": "फ़ीचर टॉगल",
@@ -39,6 +41,25 @@
       "LANGUAGE": "भाषा चयन",
       "PROFILE_PIC": "प्रोफ़ाइल चित्र",
       "CHANGE_PASSWORD": "पासवर्ड बदलें"
+    },
+    "AUTH": {
+      "LOGIN": {
+        "TITLE": "लॉगिन",
+        "EMAIL_PLACEHOLDER": "ईमेल",
+        "PASSWORD_PLACEHOLDER": "पासवर्ड",
+        "INVALID_CREDENTIALS": "गलत लॉगिन विवरण",
+        "LOGIN_BUTTON": "लॉगिन करें"
+      },
+      "CHANGE_PASSWORD": {
+        "TITLE": "पासवर्ड बदलें",
+        "CURRENT_PASSWORD": "वर्तमान पासवर्ड",
+        "NEW_PASSWORD": "नया पासवर्ड",
+        "CONFIRM_PASSWORD": "पासवर्ड की पुष्टि करें",
+        "ERROR_INCORRECT_CURRENT": "वर्तमान पासवर्ड गलत है",
+        "ERROR_NEW_PASSWORD_EMPTY": "नया पासवर्ड खाली नहीं हो सकता",
+        "ERROR_PASSWORD_MISMATCH": "पासवर्ड मेल नहीं खाते",
+        "UPDATE_BUTTON": "पासवर्ड अपडेट करें"
+      }
     }
   }
 }

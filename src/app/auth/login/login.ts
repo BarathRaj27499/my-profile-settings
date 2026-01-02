@@ -3,10 +3,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Auth } from '../../services/auth';
 import { Theme } from '../../services/theme';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, TranslatePipe],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -28,7 +29,7 @@ export class Login {
     if (this.auth.login(email!, password!)) {
       this.router.navigate(['/my-profile']);
     } else {
-      alert('Invalid credentials');
+      this.form.setErrors({ invalidCredentials: true });
     }
   }
 }
